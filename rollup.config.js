@@ -1,8 +1,8 @@
 export default {
   input: './src/main.js',
   output: {
-    file: 'dist/javascript-validate-utils.js',
+    file: 'dist/javascript-common-utils.js',
     format: 'esm',
-    name: 'javascript-validate-utils'
+    name: 'javascript-common-utils'
   }
 }

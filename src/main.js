@@ -1,5 +1,9 @@
-import { formatMonthAndDay } from "./time"
+import { formatMonthAndDay, dateFormat, generatorDate } from "./time"
+import { telDesensitization } from "./telephone"
 
 export {
-    formatMonthAndDay
+    formatMonthAndDay,
+    dateFormat,
+    generatorDate,
+    telDesensitization
 }
