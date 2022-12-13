@@ -74,3 +74,6 @@ console.log(res) // 23.27
     日期格式化提供两个方法，dateFormat 和 formatMonthAndDay，其中 formatMonthAndDay 主要格式化为 12-12 格式，而dateFormat 则可以提供更加灵活的生成方式。formatMonthAndDay(dateStr). dateStr: 字符串格式，  2022-02-13或者2022-02-13 12:23:09
     dateFormat(date, pattern) date: 日期字符串， pattern：生成日期的格式，如 yyyyMMddhhmmss，yyyyMMdd，MM-dd， hh:mm 等
   ```
+
+
+ ## 工具方法会持续补充 
