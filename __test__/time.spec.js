@@ -2,8 +2,8 @@ import { formatMonthAndDay, dateFormat, generatorDate } from "../src/time"
 
 describe("common utils test cases", ()=> {
     test("generator date test", ()=> {
-        expect(generatorDate(false)).toEqual("2022-12-12")
-        expect(generatorDate()).toContain("2022-12-12")
+        expect(generatorDate(false)).toEqual("2022-12-13")
+        expect(generatorDate()).toContain("2022-12-13")
     })
     test("normal time cases", ()=> {
         expect(formatMonthAndDay("2022-02-13")).toEqual("02-13")
