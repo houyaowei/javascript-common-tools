@@ -5,15 +5,31 @@ export const generatorUUID =  () => {
     return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
   }
 
-  export const trim = (str) => {
-    if (!str) {
-      return "";
-    }
-    return str.replace(/\s*/g, "");
+export const trim = (str) => {
+  if (!str) {
+    return "";
   }
+  return str.replace(/\s*/g, "");
+}
 
-  export const arrayFlatten = (arr) =>
-    arr.reduce(
-      (a, v) => a.concat(Array.isArray(v) ? arrayFlatten(v) : v),
-      []
-    )
+export const arrayFlatten = (arr) =>
+  arr.reduce(
+    (a, v) => a.concat(Array.isArray(v) ? arrayFlatten(v) : v),
+    []
+  )
+/**
+ * 
+ * @param {*} pass 
+ * 最短6位，最长16位 {6,16}
+  必须包含1个数字
+  必须包含2个小写字母
+  必须包含2个大写字母
+  必须包含1个特殊字符
+ */
+export const checkPassworld = (pass)=> {
+  if(!pass) {
+    return false
+  }
+  const pattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*?\(\)]).{6,16}$/;
+  return pattern.test(pass)  
+}  

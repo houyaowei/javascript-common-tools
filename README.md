@@ -4,11 +4,30 @@ javascript工具方法整理，因为懒得再CV了。欢迎补充。
 <br/>
 <br/>
 
+### 安装
+```javascript
+yarn add javascript-common-tools
+
+or
+
+npm install javascript-common-tools
+
+or 
+
+pnpm add javascript-common-tools
+
+```
+
+### 引用方法
+```javascript
+  import {telDesensitization, keepTwoDecimal, getQueryParams, ...} from "javascript-common-tools"
+```
+
 ### 支持的工具方法如下：
 
 - 电话号码格式化(133*****6564) 
  ``` javascript
-    telDesensitization(tel,count)  tel: 要格式化的电话，count:尾号保留的位数
+  telDesensitization(tel,count)  tel: 要格式化的电话，count:尾号保留的位数
 ````
 
 - 四舍五入保留两位小数
@@ -27,9 +46,7 @@ console.log(res) // 23.27
 - 去空格（去除所有的空格）
   
   ```javascript
-
   trim(str): str为要去除空格的对象
-
   ```
 - 数组拉平
   
@@ -64,10 +81,10 @@ console.log(res) // 23.27
    generatorUUID(): 无参数
   ```
 - 生成日期(generatorDate)，格式: 2022-02-13或者2022-02-13 12:23:09
-```javascript
-  generatorDate(showHMS = true), showHMS:是否显示小时、分钟、秒，默认显示
-  如果只显示年月日，传入布尔类型的值 false 即可。
-```
+  ```javascript
+    generatorDate(showHMS = true), showHMS:是否显示小时、分钟、秒，默认显示
+    如果只显示年月日，传入布尔类型的值 false 即可。
+  ```
 
 - 格式化月日(dateFormat 和 formatMonthAndDay)  
     日期格式化提供两个方法，dateFormat 和 formatMonthAndDay </br>
@@ -85,8 +102,8 @@ console.log(res) // 23.27
   ```
 - 判断是否是移动手机号
   ```javascript
-  isMobile("18191976090") //true
-  isMobile("02988368834") // false
+    isMobile("18191976090") //true
+    isMobile("02988368834") // false
   ```  
 - 判断是否是URL
   ```javascript
@@ -94,9 +111,18 @@ console.log(res) // 23.27
   ```
 - 判断是否是pdf文件
   ```javascript
-  isPDF("https://jestjs.io/docs/expect/doc.pdf") //true
+    isPDF("https://jestjs.io/docs/expect/doc.pdf") //true
   ```
-
+- 校验密码强度
+  
+  规则: 最短6位，最长16位 {6,16},必须包含1个数字、2个小写字母、2个大写字母、1个特殊字符
+  ```javascript
+    checkPassworld(["as12$"]) // false
+    checkPassworld(["as12AR$"]) // true
+    checkPassworld(["mn12AR$&"]) // true
+    checkPassworld(["as129$"])   // false
+    checkPassworld(["as129$jdddnde2288"]) //false
+  ```
 
 </br></br></br>
  ## todo：工具方法持续补充 

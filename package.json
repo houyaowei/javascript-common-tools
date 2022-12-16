@@ -1,6 +1,6 @@
 {
   "name": "javascript-common-tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/javascript-common-tools",
   "author": "houyuewei <houyaowei@163.com>",
   "description": "javascript common tools",

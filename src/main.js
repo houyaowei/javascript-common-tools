@@ -1,6 +1,6 @@
 import { formatMonthAndDay, dateFormat, generatorDate } from "./time"
 import { telDesensitization, isLandLinePhone, isMobile } from "./telephone"
-import { generatorUUID,trim, arrayFlatten } from "./app"
+import { generatorUUID,trim, arrayFlatten, checkPassworld } from "./app"
 import { getQueryParams, isURL } from "./urls"
 import { numFormate,formatStrToNum, getChinaNum,keepTwoDecimal } from "./numbers"
 import { isPDF } from "../src/file"
@@ -21,5 +21,6 @@ export {
     trim,
     arrayFlatten,
     isURL,
-    isPDF
+    isPDF,
+    checkPassworld
 }
