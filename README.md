@@ -1,6 +1,6 @@
 ##  javascript-common-tools
 
-javascript 常用工具方法整理，欢迎提交 merge request。
+javascript工具方法整理，因为懒得再CV了。欢迎补充。
 <br/>
 <br/>
 
@@ -70,10 +70,33 @@ console.log(res) // 23.27
 ```
 
 - 格式化月日(dateFormat 和 formatMonthAndDay)  
+    日期格式化提供两个方法，dateFormat 和 formatMonthAndDay </br>
+    formatMonthAndDay 主要格式化为 12-12 格式 </br>
+    dateFormat 则可以提供更加灵活的生成方式。
+
   ```javascript
-    日期格式化提供两个方法，dateFormat 和 formatMonthAndDay，其中 formatMonthAndDay 主要格式化为 12-12 格式，而dateFormat 则可以提供更加灵活的生成方式。formatMonthAndDay(dateStr). dateStr: 字符串格式，  2022-02-13或者2022-02-13 12:23:09
+    formatMonthAndDay(dateStr). dateStr: 字符串格式，  2022-02-13或者2022-02-13 12:23:09
     dateFormat(date, pattern) date: 日期字符串， pattern：生成日期的格式，如 yyyyMMddhhmmss，yyyyMMdd，MM-dd， hh:mm 等
+  ```
+- 判断是否是座机
+  ```javascript
+    isLandLinePhone("029-88368834") // true
+    isLandLinePhone("02988368834") //true
+  ```
+- 判断是否是移动手机号
+  ```javascript
+  isMobile("18191976090") //true
+  isMobile("02988368834") // false
+  ```  
+- 判断是否是URL
+  ```javascript
+    isURL("https://jestjs.io/docs/expect")  //true
+  ```
+- 判断是否是pdf文件
+  ```javascript
+  isPDF("https://jestjs.io/docs/expect/doc.pdf") //true
   ```
 
 
- ## 工具方法会持续补充 
+</br></br></br>
+ ## todo：工具方法持续补充 

@@ -1,4 +1,4 @@
-import { getQueryParams } from "../src/urls"
+import { getQueryParams, isURL } from "../src/urls"
 
 describe("url test cases", ()=> {
     test("getQueryParams cases", ()=> {
@@ -6,5 +6,7 @@ describe("url test cases", ()=> {
         expect(res.get("name")).toEqual("hyw")
         expect(res.get("from")).toEqual("mdn")
     })
-    
+    test("isURL cases", ()=> {
+        expect(isURL("https://jestjs.io/docs/expect")).toBeTruthy()
+    })
 })
