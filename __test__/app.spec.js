@@ -1,4 +1,4 @@
-import { trim, arrayFlatten, checkPassworld } from "../src/app"
+import { trim, arrayFlatten, checkPassworld,isChinese, isAllChinese } from "../src/app"
 
 describe("app test cases", ()=> {
     test("trim cases", ()=> {
@@ -14,5 +14,15 @@ describe("app test cases", ()=> {
         expect(checkPassworld(["mn12AR$&"])).toBeTruthy()
         expect(checkPassworld(["as129$"])).toBeFalsy()
         expect(checkPassworld(["as129$jdddnde2288"])).toBeFalsy()
+    })
+    test("isChinese cases", ()=> {
+        expect(isChinese("as")).toBeFalsy()
+        expect(isChinese("你好")).toBeTruthy()
+    })
+    test("isAllChinese cases", ()=> {
+        expect(isAllChinese("as")).toBeFalsy()
+        expect(isAllChinese("你好")).toBeTruthy()
+        expect(isAllChinese("wq你好")).toBeFalsy()
+        expect(isAllChinese("你好wq")).toBeFalsy()
     })
 })

@@ -1,3 +1,4 @@
+//保留两位小数
 export const numFormate = (num) => {
     if (!num) {
       return "0.00";
@@ -64,6 +65,7 @@ export const numFormate = (num) => {
     return result;
   }
 
+  //四舍五入保留两位小数
   export const keepTwoDecimal = (num) => {
     let resultNum = parseFloat(num);
     if (isNaN(resultNum)) {
@@ -72,3 +74,12 @@ export const numFormate = (num) => {
     resultNum = Math.round(num * 100) / 100;
     return resultNum;
   }
+  //超过阈值显示 num+
+  export const outOfNum = (val, maxNum) =>{
+    val = val ? val-0 : 0;
+    if (val > maxNum ) {
+      return `${maxNum}+`
+    }else{
+      return val;
+    }
+  };

@@ -32,4 +32,13 @@ export const checkPassworld = (pass)=> {
   }
   const pattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*?\(\)]).{6,16}$/;
   return pattern.test(pass)  
-}  
+}
+//判断是否是中文
+export const isChinese = (str) => { 
+  const reg =/^[\u4e00-\u9fa5]/; 
+  return reg.test(str)
+}
+export const isAllChinese = (str) => { 
+  const reg =/^[\u4e00-\u9fa5]+$/; 
+  return reg.test(str)
+}   

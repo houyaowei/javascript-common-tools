@@ -1,11 +1,10 @@
 {
   "name": "javascript-common-tools",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/javascript-common-tools",
   "author": "houyuewei <houyaowei@163.com>",
   "description": "javascript common tools",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "build": "rollup -c",
     "test": "jest"
@@ -27,7 +26,5 @@
     "jest-esm-transformer-2": "^1.0.0",
     "rollup": "^3.7.0"
   },
-  "dependencies": {
-    "javascript-validate-utils": "^0.2.3"
-  }
+  "dependencies": {}
 }

@@ -123,6 +123,42 @@ console.log(res) // 23.27
     checkPassworld(["as129$"])   // false
     checkPassworld(["as129$jdddnde2288"]) //false
   ```
+- 转义html标签（<,>,&,",'）
+  ```javascript
+    escapeHTML("<")  // &lt;
+    escapeHTML(">")  // &gt;
+    escapeHTML("&")  // &amp;
+    escapeHTML('"')  // &quot;
+    escapeHTML("'")  // &apos;
+  ```
+- 反转义html标签
+  ```javascript
+    unescapeHTML("&lt;") //  <
+  ```
+- 数字超过规定大小加上加号“+
+  ```javascript
+    outOfNum(100, 66) //66+
+    outOfNum(50, 66) //50
+  ```
+- 大小转化B KB MB GB
+  ```javascript
+    sizeConvert(2000) //"1.95KB"
+    sizeConvert(2000000) //"1.91MB"
+    sizeConvert(2000000000) //"1.86GB"
+  ```
+- 是否是中文
+  ```javascript
+    isChinese("hello") // false
+    isChinese("你") // true
+  ```
+- 是否全是中文
+  ```javascript
+    isAllChinese("hello") // false
+    isAllChinese("你好") // true
+    isAllChinese("qq你好") // false
+    isAllChinese("你好qw") // false
+  ```
+
 
 </br></br></br>
  ## todo：工具方法持续补充 

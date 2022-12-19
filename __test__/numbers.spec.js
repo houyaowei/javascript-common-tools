@@ -1,4 +1,4 @@
-import { numFormate, getChinaNum, keepTwoDecimal, formatStrToNum } from "../src/numbers"
+import { numFormate, getChinaNum, keepTwoDecimal, formatStrToNum,outOfNum } from "../src/numbers"
 
 describe("numbers test cases", ()=> {
     test("numFormate cases", ()=> {
@@ -29,5 +29,9 @@ describe("numbers test cases", ()=> {
     test("formatStrToNum cases", ()=> {
         let res = formatStrToNum("123,456.00")
         expect(res).toEqual(123456.00)
+    })
+    test("outOfNum cases", ()=> {
+        expect(outOfNum(100, 66)).toEqual("66+")
+        expect(outOfNum(50, 66)).toEqual(50)
     })
 })
