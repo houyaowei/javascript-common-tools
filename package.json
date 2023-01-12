@@ -1,10 +1,11 @@
 {
   "name": "javascript-common-tools",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/javascript-common-tools",
   "author": "houyuewei <houyaowei@163.com>",
   "description": "javascript common tools",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "rollup -c",
     "test": "jest"

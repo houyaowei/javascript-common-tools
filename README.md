@@ -158,7 +158,20 @@ console.log(res) // 23.27
     isAllChinese("qq你好") // false
     isAllChinese("你好qw") // false
   ```
-
+- 驼峰转换
+  ```javascript
+    camelCase('foo Bar') // fooBar
+    camelCase('foo-bar--') // fooBar
+  ```
+- 首字母小写转大写
+  ```javascript
+    capitalize('hello world') //Hello World
+    capitalize('hello') //Hello
+  ```
+- 格式化时间，转化为几分钟(秒、小时、天、星期、月、年)前
+  ```javascript
+   timeFormat(utc毫秒) // xx前
+  ```
 
 </br></br></br>
  ## todo：工具方法持续补充 

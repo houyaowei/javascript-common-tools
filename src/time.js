@@ -64,3 +64,18 @@ export const generatorDate = (showHMS = true)=> {
   }
   return _year+ "-" + _moth + "-" + _day
 }
+/**
+ * 格式化时间，转化为几分钟(秒、星期、月、年)前
+ * @returns 
+ */
+export const timeFormat = ()=>{
+  const mistiming = Math.round((Date.now() - timestamp) / 1000);
+  const arrr = ['年', '个月', '星期', '天', '小时', '分钟', '秒'];
+  const arrn = [31536000, 2592000, 604800, 86400, 3600, 60, 1];
+  for (var i = 0; i < arrn.length; i++) {
+    const inm = Math.floor(mistiming / arrn[i]);
+      if (inm != 0) {
+          return inm + arrr[i] + '前';
+      }
+  }
+}

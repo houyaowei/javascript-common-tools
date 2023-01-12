@@ -1,6 +1,6 @@
-import { formatMonthAndDay, dateFormat, generatorDate } from "./time"
+import { formatMonthAndDay, dateFormat, generatorDate, timeFormat } from "./time"
 import { telDesensitization, isLandLinePhone, isMobile } from "./telephone"
-import { generatorUUID,trim, arrayFlatten, checkPassworld,isChinese, isAllChinese } from "./app"
+import { generatorUUID,trim, arrayFlatten, checkPassworld,isChinese, isAllChinese, camelCase, capitalize } from "./app"
 import { getQueryParams, isURL } from "./urls"
 import { numFormate,formatStrToNum, getChinaNum,keepTwoDecimal,outOfNum } from "./numbers"
 import { isPDF, sizeConvert } from "../src/file"
@@ -9,6 +9,7 @@ import { escapeHTML,unescapeHTML } from "./html"
 export {
     formatMonthAndDay,
     dateFormat,
+    timeFormat,
     generatorDate,
     telDesensitization,
     isMobile,
@@ -29,5 +30,7 @@ export {
     escapeHTML,
     outOfNum,
     isChinese,
-    isAllChinese
+    isAllChinese,
+    camelCase,
+    capitalize
 }

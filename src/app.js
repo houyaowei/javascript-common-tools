@@ -41,4 +41,26 @@ export const isChinese = (str) => {
 export const isAllChinese = (str) => { 
   const reg =/^[\u4e00-\u9fa5]+$/; 
   return reg.test(str)
-}   
+}
+
+/**
+ * 驼峰转换
+ * @param {*} string 
+ * @returns 
+ */
+export const camelCase = (string) => {
+  const camelCaseRegex = /[-_\s]+(.)?/g
+  return string.replace(camelCaseRegex, (match, char) => {
+    return char ? char.toUpperCase() : ''
+  })
+}
+
+/**
+ * 首字母小写转大写
+ * @param {*} string 
+ * @returns 
+ */
+export const capitalize = (string) => {
+  const capitalizeRegex = /(?:^|\s+)\w/g
+  return string.toLowerCase().replace(capitalizeRegex, (match) => match.toUpperCase())
+}
