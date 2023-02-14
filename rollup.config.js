@@ -1,8 +1,8 @@
 export default {
   input: './src/main.js',
   output: {
-    file: 'dist/javascript-common-utils.js',
+    file: 'dist/javascript-common-tools.js',
     format: 'esm',
-    name: 'javascript-common-utils'
+    name: 'javascript-common-tools'
   }
 }
