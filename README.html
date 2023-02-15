@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="javascript-common-tools">javascript-common-tools</h2>
+<p>javascript工具方法整理，因为懒得再CV了。欢迎补充。
+<br/>
+<br/></p>
+<h3 id="%E5%AE%89%E8%A3%85">安装</h3>
+<pre class="hljs"><code><div>yarn add javascript-common-tools
+
+or
+
+npm install javascript-common-tools
+
+or 
+
+pnpm add javascript-common-tools
+
+</div></code></pre>
+<h3 id="%E5%BC%95%E7%94%A8%E6%96%B9%E6%B3%95">引用方法</h3>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">import</span> {telDesensitization, keepTwoDecimal, getQueryParams, ...} <span class="hljs-keyword">from</span> <span class="hljs-string">"javascript-common-tools"</span>
+</div></code></pre>
+<h3 id="%E6%94%AF%E6%8C%81%E7%9A%84%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95%E5%A6%82%E4%B8%8B">支持的工具方法如下：</h3>
+<ul>
+<li>电话号码格式化(133*****6564)</li>
+</ul>
+<pre class="hljs"><code><div> telDesensitization(tel,count)  tel: 要格式化的电话，count:尾号保留的位数
+</div></code></pre>
+<ul>
+<li>四舍五入保留两位小数</li>
+</ul>
+<pre class="hljs"><code><div>res = keepTwoDecimal(<span class="hljs-number">23.2</span>)
+<span class="hljs-built_in">console</span>.log(res) <span class="hljs-comment">// 23.2</span>
+
+res = keepTwoDecimal(<span class="hljs-number">23.26</span>)
+<span class="hljs-built_in">console</span>.log(res) <span class="hljs-comment">// 23.26</span>
+
+res = keepTwoDecimal(<span class="hljs-number">23.267</span>)
+<span class="hljs-built_in">console</span>.log(res) <span class="hljs-comment">// 23.27</span>
+
+</div></code></pre>
+<ul>
+<li>
+<p>去空格（去除所有的空格）</p>
+<pre class="hljs"><code><div>trim(str): str为要去除空格的对象
+</div></code></pre>
+</li>
+<li>
+<p>数组拉平</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> res = arrayFlatten([<span class="hljs-number">1</span>,[<span class="hljs-number">2</span>],[[<span class="hljs-number">3</span>],<span class="hljs-number">4</span>]])
+<span class="hljs-built_in">console</span>.log(res.get(<span class="hljs-string">"name"</span>)) <span class="hljs-comment">//[1,2,3,4]</span>
+
+</div></code></pre>
+</li>
+<li>
+<p>获得 url 中的请求参数</p>
+<pre class="hljs"><code><div>   <span class="hljs-keyword">const</span> res = getQueryParams(<span class="hljs-string">"https://developer.mozilla.org/en-US/docs/Web/API/URL_API?name=hyw&amp;age=25&amp;appId=22222&amp;from=mdn"</span>)
+   <span class="hljs-built_in">console</span>.log(res.get(<span class="hljs-string">"name"</span>)) <span class="hljs-comment">//hyw</span>
+</div></code></pre>
+</li>
+<li>
+<p>数字千分符</p>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">let</span> res = numFormate(<span class="hljs-number">123456</span>)
+  <span class="hljs-built_in">console</span>.log(res) <span class="hljs-comment">//"123,456.00"</span>
+</div></code></pre>
+</li>
+<li>
+<p>数字千分符串转数字</p>
+<pre class="hljs"><code><div> <span class="hljs-keyword">let</span> res = formatStrToNum(<span class="hljs-string">"123,456.00"</span>)
+  <span class="hljs-built_in">console</span>.log(res) <span class="hljs-comment">// 123456.00</span>
+</div></code></pre>
+</li>
+<li>
+<p>数字转汉字</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> res = getChinaNum(<span class="hljs-number">122</span>)
+<span class="hljs-built_in">console</span>.log(res) <span class="hljs-comment">// '一百二十二'</span>
+</div></code></pre>
+</li>
+<li>
+<p>生成uid</p>
+<pre class="hljs"><code><div> generatorUUID(): 无参数
+</div></code></pre>
+</li>
+<li>
+<p>生成日期(generatorDate)，格式: 2022-02-13或者2022-02-13 12:23:09</p>
+<pre class="hljs"><code><div>  generatorDate(showHMS = <span class="hljs-literal">true</span>), <span class="hljs-attr">showHMS</span>:是否显示小时、分钟、秒，默认显示
+  如果只显示年月日，传入布尔类型的值 <span class="hljs-literal">false</span> 即可。
+</div></code></pre>
+</li>
+<li>
+<p>格式化月日(dateFormat 和 formatMonthAndDay)<br>
+日期格式化提供两个方法，dateFormat 和 formatMonthAndDay </br>
+formatMonthAndDay 主要格式化为 12-12 格式 </br>
+dateFormat 则可以提供更加灵活的生成方式。</p>
+<pre class="hljs"><code><div>  formatMonthAndDay(dateStr). dateStr: 字符串格式，  <span class="hljs-number">2022</span><span class="hljs-number">-02</span><span class="hljs-number">-13</span>或者<span class="hljs-number">2022</span><span class="hljs-number">-02</span><span class="hljs-number">-13</span> <span class="hljs-number">12</span>:<span class="hljs-number">23</span>:<span class="hljs-number">09</span>
+  dateFormat(date, pattern) date: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>日期字符串或者Date实列<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span></span>， pattern：生成日期的格式，如 yyyyMMddhhmmss，yyyyMMdd，MM-dd， hh:mm 等
+</div></code></pre>
+</li>
+<li>
+<p>判断是否是座机</p>
+<pre class="hljs"><code><div>  isLandLinePhone(<span class="hljs-string">"029-88368834"</span>) <span class="hljs-comment">// true</span>
+  isLandLinePhone(<span class="hljs-string">"02988368834"</span>) <span class="hljs-comment">//true</span>
+</div></code></pre>
+</li>
+<li>
+<p>判断是否是移动手机号</p>
+<pre class="hljs"><code><div>  isMobile(<span class="hljs-string">"18191976090"</span>) <span class="hljs-comment">//true</span>
+  isMobile(<span class="hljs-string">"02988368834"</span>) <span class="hljs-comment">// false</span>
+</div></code></pre>
+</li>
+<li>
+<p>判断是否是URL</p>
+<pre class="hljs"><code><div>  isURL(<span class="hljs-string">"https://jestjs.io/docs/expect"</span>)  <span class="hljs-comment">//true</span>
+</div></code></pre>
+</li>
+<li>
+<p>判断是否是pdf文件</p>
+<pre class="hljs"><code><div>  isPDF(<span class="hljs-string">"https://jestjs.io/docs/expect/doc.pdf"</span>) <span class="hljs-comment">//true</span>
+</div></code></pre>
+</li>
+<li>
+<p>校验密码强度</p>
+<p>规则: 最短6位，最长16位 {6,16},必须包含1个数字、2个小写字母、2个大写字母、1个特殊字符</p>
+<pre class="hljs"><code><div>  checkPassworld([<span class="hljs-string">"as12$"</span>]) <span class="hljs-comment">// false</span>
+  checkPassworld([<span class="hljs-string">"as12AR$"</span>]) <span class="hljs-comment">// true</span>
+  checkPassworld([<span class="hljs-string">"mn12AR$&amp;"</span>]) <span class="hljs-comment">// true</span>
+  checkPassworld([<span class="hljs-string">"as129$"</span>])   <span class="hljs-comment">// false</span>
+  checkPassworld([<span class="hljs-string">"as129$jdddnde2288"</span>]) <span class="hljs-comment">//false</span>
+</div></code></pre>
+</li>
+<li>
+<p>转义html标签（&lt;,&gt;,&amp;,&quot;,'）</p>
+<pre class="hljs"><code><div>  escapeHTML(<span class="hljs-string">"&lt;"</span>)  <span class="hljs-comment">// &amp;lt;</span>
+  escapeHTML(<span class="hljs-string">"&gt;"</span>)  <span class="hljs-comment">// &amp;gt;</span>
+  escapeHTML(<span class="hljs-string">"&amp;"</span>)  <span class="hljs-comment">// &amp;amp;</span>
+  escapeHTML(<span class="hljs-string">'"'</span>)  <span class="hljs-comment">// &amp;quot;</span>
+  escapeHTML(<span class="hljs-string">"'"</span>)  <span class="hljs-comment">// &amp;apos;</span>
+</div></code></pre>
+</li>
+<li>
+<p>反转义html标签</p>
+<pre class="hljs"><code><div>  unescapeHTML(<span class="hljs-string">"&amp;lt;"</span>) <span class="hljs-comment">//  &lt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>数字超过规定大小加上加号“+</p>
+<pre class="hljs"><code><div>  outOfNum(<span class="hljs-number">100</span>, <span class="hljs-number">66</span>) <span class="hljs-comment">//66+</span>
+  outOfNum(<span class="hljs-number">50</span>, <span class="hljs-number">66</span>) <span class="hljs-comment">//50</span>
+</div></code></pre>
+</li>
+<li>
+<p>大小转化B KB MB GB</p>
+<pre class="hljs"><code><div>  sizeConvert(<span class="hljs-number">2000</span>) <span class="hljs-comment">//"1.95KB"</span>
+  sizeConvert(<span class="hljs-number">2000000</span>) <span class="hljs-comment">//"1.91MB"</span>
+  sizeConvert(<span class="hljs-number">2000000000</span>) <span class="hljs-comment">//"1.86GB"</span>
+</div></code></pre>
+</li>
+<li>
+<p>是否是中文</p>
+<pre class="hljs"><code><div>  isChinese(<span class="hljs-string">"hello"</span>) <span class="hljs-comment">// false</span>
+  isChinese(<span class="hljs-string">"你"</span>) <span class="hljs-comment">// true</span>
+</div></code></pre>
+</li>
+<li>
+<p>是否全是中文</p>
+<pre class="hljs"><code><div>  isAllChinese(<span class="hljs-string">"hello"</span>) <span class="hljs-comment">// false</span>
+  isAllChinese(<span class="hljs-string">"你好"</span>) <span class="hljs-comment">// true</span>
+  isAllChinese(<span class="hljs-string">"qq你好"</span>) <span class="hljs-comment">// false</span>
+  isAllChinese(<span class="hljs-string">"你好qw"</span>) <span class="hljs-comment">// false</span>
+</div></code></pre>
+</li>
+<li>
+<p>驼峰转换</p>
+<pre class="hljs"><code><div>  camelCase(<span class="hljs-string">'foo Bar'</span>) <span class="hljs-comment">// fooBar</span>
+  camelCase(<span class="hljs-string">'foo-bar--'</span>) <span class="hljs-comment">// fooBar</span>
+</div></code></pre>
+</li>
+<li>
+<p>首字母小写转大写</p>
+<pre class="hljs"><code><div>  capitalize(<span class="hljs-string">'hello world'</span>) <span class="hljs-comment">//Hello World</span>
+  capitalize(<span class="hljs-string">'hello'</span>) <span class="hljs-comment">//Hello</span>
+</div></code></pre>
+</li>
+<li>
+<p>格式化时间，转化为几分钟(秒、小时、天、星期、月、年)前</p>
+<pre class="hljs"><code><div> timeFormat(utc毫秒) <span class="hljs-comment">// xx前</span>
+</div></code></pre>
+</li>
+</ul>
+<p></br></br></br></p>
+<h2 id="todo%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95%E6%8C%81%E7%BB%AD%E8%A1%A5%E5%85%85">todo：工具方法持续补充</h2>
+
+</body>
+</html>
