@@ -18,7 +18,13 @@ export const formatMonthAndDay = (dateStr) => {
   }
 
 export const dateFormat= (date, _pattern) => {
-  let _date = new Date(date);
+  let _date;
+  // 判断date是不是日期对象
+  if (date instanceof Date) {
+    _date = date;
+  }else{
+    _date = new Date(date);
+  }
   const o = {
     "M+": _date.getMonth() + 1, // 月份
     "d+": _date.getDate(), // 日

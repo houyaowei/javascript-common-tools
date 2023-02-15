@@ -93,7 +93,7 @@ console.log(res) // 23.27
 
   ```javascript
     formatMonthAndDay(dateStr). dateStr: 字符串格式，  2022-02-13或者2022-02-13 12:23:09
-    dateFormat(date, pattern) date: 日期字符串， pattern：生成日期的格式，如 yyyyMMddhhmmss，yyyyMMdd，MM-dd， hh:mm 等
+    dateFormat(date, pattern) date: 日期字符串或者Date实列， pattern：生成日期的格式，如 yyyyMMddhhmmss，yyyyMMdd，MM-dd， hh:mm 等
   ```
 - 判断是否是座机
   ```javascript
