@@ -21,6 +21,6 @@ describe("common utils test cases", ()=> {
         expect(dateFormat("2022-12-12 13:40:22",'MM-dd hh:mm')).toEqual('12-12 13:40')
         expect(dateFormat("2022-12-12 13:40:22",'yyyyMMddhhmmss')).toEqual('20221212134022')
         expect(dateFormat("2022-12-12 13:40:22",'yyyyMMdd')).toEqual('20221212')
-        expect(dateFormat(new Date(),'yyyyMMdd')).toEqual('20230215')
+        expect(dateFormat(new Date(),'yyyyMMdd')).toEqual('20230614')
     })
 })

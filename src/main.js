@@ -5,6 +5,7 @@ import { getQueryParams, isURL } from "./urls"
 import { numFormate,formatStrToNum, getChinaNum,keepTwoDecimal,outOfNum } from "./numbers"
 import { isPDF, sizeConvert } from "../src/file"
 import { escapeHTML,unescapeHTML } from "./html"
+import { throttle, debounce } from "./utils"
 
 export {
     formatMonthAndDay,
@@ -32,5 +33,7 @@ export {
     isChinese,
     isAllChinese,
     camelCase,
-    capitalize
+    capitalize,
+    throttle,
+    debounce
 }

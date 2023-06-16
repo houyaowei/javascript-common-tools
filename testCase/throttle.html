@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>throttle</title>
+</head>
+<body>
+  <input type="text">
+  <button id="cancel">取消</button>
+
+  <script type="module">
+    import { throttle } from './../dist/javascript-common-tools.js';
+    const inputEl = document.querySelector("input")
+    let counter = 0
+    const inputChange = function(event) {
+      console.log(`触发第${++counter}次`, this, event)
+      return inputEl.value;
+    }
+
+    // 节流处理
+    const _throttle = throttle(inputChange, 3000, { 
+      leading: false, 
+      trailing: true,
+    })
+    inputEl.oninput = (...args) => {
+      _throttle.apply(inputEl, args).then(res => {
+        console.log("Promise的返回值结果:", res)
+      })
+    }
+
+    // 取消功能
+    const cancelBtn = document.querySelector("#cancel")
+    cancelBtn.onclick = function() {
+      _throttle.cancel()
+    }
+  </script>
+</body>
+</html>

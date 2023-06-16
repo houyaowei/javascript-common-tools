@@ -1,6 +1,6 @@
 {
   "name": "javascript-common-tools",
-  "version": "0.1.6",
+  "version": "0.3.8",
   "main": "dist/javascript-common-tools",
   "author": "houyuewei <houyaowei@163.com>",
   "description": "javascript common tools",
@@ -11,8 +11,7 @@
     "test": "jest"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "repository": {
     "type": "git",

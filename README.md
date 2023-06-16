@@ -172,6 +172,30 @@ console.log(res) // 23.27
   ```javascript
    timeFormat(utc毫秒) // xx前
   ```
-
+- 防抖debounce, 参数 fn：要执行的方法, delay：延迟的毫秒数，默认是500， immediate是否立即执行，默认是false
+  ```javascript
+    const debounceFn = debounce(fn, delay, false)
+    debounceFn.apply(上下文, args).then(res => {
+        console.log("result:", res)
+      })
+    }
+  ```
+- 节流debounce, 参数 fn：要执行的方法, delay：延迟的毫秒数，默认是500， leading首次是否执行，默认是true，trailing是否最后结束触发，默认是false
+  ```javascript
+    const _throttle = throttle(fn, 3000, { 
+      leading: false, 
+      trailing: true,
+    })
+    _throttle.apply(上下文, args).then(res => {
+        console.log("result:", res)
+      })
+    }
+  ```  
 </br></br></br>
+ 
  ## todo：工具方法持续补充 
+ 欢迎提交PR
+
+ ## 更新日志
+
+ [changelog](./changelog.md)
