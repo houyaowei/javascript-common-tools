@@ -3,7 +3,7 @@
  * @param {*} str 
  * @returns 
  */
-export const escapeHTML = str =>{
+export const escapeHTML = (str:string):string =>{
     if(!str){
         return ""
     }
@@ -14,7 +14,7 @@ export const escapeHTML = str =>{
  * @param {*} str 
  * @returns 
  */
-export const unescapeHTML = str => {
+export const unescapeHTML = (str:string):string => {
     if(!str){
         return ""
     }

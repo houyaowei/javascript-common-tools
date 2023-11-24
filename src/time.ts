@@ -5,19 +5,19 @@ import { lt } from "./utils"
  * @param {*} dateStr ,格式2022-02-13或者2022-02-13 12:23:09
  * @returns 02-13
  */
-export const formatMonthAndDay = (dateStr) => {
+export const formatMonthAndDay = (dateStr:string) => {
     if (!dateStr) {
       return "";
     }
     let res = dateStr.match(/(\d{4})[-](\d{1,2})[-](\d{1,2})/)
     //0:全匹配 1:年 2:月 3:日
-    if(res.length == 4) {
+    if(res?.length == 4) {
       return lt(res[2]) + '-' + lt(res[3])
     }
     return "";
   }
 
-export const dateFormat= (date, _pattern) => {
+export const dateFormat= (date: Date | string, _pattern:string):string => {
   let _date;
   // 判断date是不是日期对象
   if (date instanceof Date) {

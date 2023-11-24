@@ -3,7 +3,7 @@ import { telDesensitization, isLandLinePhone, isMobile } from "./telephone"
 import { generatorUUID,trim, arrayFlatten, checkPassworld,isChinese, isAllChinese, camelCase, capitalize } from "./app"
 import { getQueryParams, isURL } from "./urls"
 import { numFormate,formatStrToNum, getChinaNum,keepTwoDecimal,outOfNum } from "./numbers"
-import { isPDF, sizeConvert } from "../src/file"
+import { isPDF, sizeConvert } from "./file"
 import { escapeHTML,unescapeHTML } from "./html"
 import { throttle, debounce } from "./utils"
 

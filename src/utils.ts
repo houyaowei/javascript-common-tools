@@ -13,7 +13,7 @@ export const lt = (num)=> {
  * @param {*} immediate ： 是否立即执行，默认是false
  * @returns 
  */
-export const debounce = (fn, delay=500, immediate = false)=>{
+export const debounce = (fn:Function, delay=500, immediate = false)=>{
   let timer = null
   let isInvoke = false
   let context = this;

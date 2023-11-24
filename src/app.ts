@@ -5,14 +5,14 @@ export const generatorUUID =  () => {
     return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
   }
 
-export const trim = (str) => {
+export const trim = (str:string):string => {
   if (!str) {
     return "";
   }
   return str.replace(/\s*/g, "");
 }
 
-export const arrayFlatten = (arr) =>
+export const arrayFlatten = (arr: any[]) =>
   arr.reduce(
     (a, v) => a.concat(Array.isArray(v) ? arrayFlatten(v) : v),
     []
@@ -26,7 +26,7 @@ export const arrayFlatten = (arr) =>
   必须包含2个大写字母
   必须包含1个特殊字符
  */
-export const checkPassworld = (pass)=> {
+export const checkPassworld = (pass:string) :boolean => {
   if(!pass) {
     return false
   }
@@ -34,11 +34,11 @@ export const checkPassworld = (pass)=> {
   return pattern.test(pass)  
 }
 //判断是否是中文
-export const isChinese = (str) => { 
+export const isChinese = (str:string): boolean => { 
   const reg =/^[\u4e00-\u9fa5]/; 
   return reg.test(str)
 }
-export const isAllChinese = (str) => { 
+export const isAllChinese = (str:string): boolean => { 
   const reg =/^[\u4e00-\u9fa5]+$/; 
   return reg.test(str)
 }

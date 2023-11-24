@@ -1,5 +1,5 @@
 //保留两位小数
-export const numFormate = (num) => {
+export const numFormate = (num:string):string => {
     if (!num) {
       return "0.00";
     }
@@ -14,7 +14,7 @@ export const numFormate = (num) => {
   }
 
   //1,2000.00 => 12000.00
-  export const formatStrToNum =  (str) => {
+  export const formatStrToNum =  (str:string):number => {
     if (!str) {
       return 0;
     }
@@ -23,8 +23,8 @@ export const numFormate = (num) => {
   }
   
   //数字转汉字
-  export const getChinaNum = (num) => {
-    let n = num;
+  export const getChinaNum = (num:string): string|void => {
+    let n:number = Number(num);
     if (!Number.isInteger(n) && n < 0) {
       return;
     }
@@ -66,16 +66,16 @@ export const numFormate = (num) => {
   }
 
   //四舍五入保留两位小数
-  export const keepTwoDecimal = (num) => {
+  export const keepTwoDecimal = (num:string): number | boolean => {
     let resultNum = parseFloat(num);
     if (isNaN(resultNum)) {
       return false;
     }
-    resultNum = Math.round(num * 100) / 100;
+    resultNum = Math.round(Number(num) * 100) / 100;
     return resultNum;
   }
   //超过阈值显示 num+
-  export const outOfNum = (val, maxNum) =>{
+  export const outOfNum = (val:number, maxNum:number) =>{
     val = val ? val-0 : 0;
     if (val > maxNum ) {
       return `${maxNum}+`
