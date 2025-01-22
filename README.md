@@ -193,6 +193,16 @@ console.log(res) // 23.27
   ```  
 </br></br></br>
  
+ ### TS支持
+由于最近没有升级该库的计划，对于在ts工程中报错的情况，可以在根目录中新增global.d.ts文件，添加以下内容：
+```javascript 
+declare module 'javascript-common-tools' {
+  export function isChinese(str: string): boolean;
+
+  //其他方法
+}
+```
+
  ## todo：工具方法持续补充 
  欢迎提交PR
 
